@@ -31,6 +31,7 @@
 ###需要完成的功能
 1. organization detecting新的设计策略实现  完成度30%
 2. organization unifying新的设计策略实现  完成度0%
+3. 测试与文档  完成度0%
 
 ##徐晶
 1. 查询新处理流程实现  完成度45%
