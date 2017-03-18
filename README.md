@@ -2,7 +2,7 @@
 
 ## The develop inmformation about dpinm
 
-### 3月份目标:
+### 目标:
 1. 支持分布式、并发以及数据备份的INMD。
 2. 支持organization-based数据分割
 3. 支持distributed transaction
@@ -14,13 +14,14 @@
 ## 张剑
 
 ### 需要完成的功能
-1. 客户端Master 多线程访问，完成度 99%<br />
+1. 客户端Master 多线程访问，完成度 100%<br />
 3/07<客户端测试代码已完成，目前同时插入语句dpinm会发生死锁，debuging> 发生死锁修改了全部底层调用接口，发现死锁后就abort事务，目前测试仍未通过。<br />
 3/10日，死锁问题已解决，测试instance0831.txt，把文件从中间分开两份，两个线程来插入，发现实例部分段错误，已告诉马杨。 <br />
 还有两点问题：1 实例bug，2 query 客户端的反序列化。 告一段落。<br />
 实例bug（其实是底层bug），已修正，插入语句没问题，只是语句之间的逻辑顺序无法控制。<br />
 3/14,使用语句顺序无关的dbpediadata数据测试, 发现有mpi通信接收不到消息的问题，会导致卡死，尚未找到原因。<br />
-2. Replication <原型代码ing> 完成度 30%  <br />
+3/18，卡死是由于MPI通信等待和BDB锁资源之间形成的死锁，修改MPI接口，加入超时机制，修改BDB配置，加入超时机制。done <br />
+2. Replication <原型代码ing> 完成度 30% <br />
 3/14已经跑通一个Replication原型例子，接下来要设计如何融入DPINM中 
 3. 打印元数据统计信息 完成度 0%
 4. 测试 and 文档  完成度 0%
