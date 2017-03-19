@@ -44,7 +44,7 @@
 ## 马杨
 ### 需要完成的功能
 1. organization detecting新的设计策略实现  完成度100%
-   实例插入过程中存在一个实例插入到两个节点的情况，目测是getSStorageNode实现存在问题，已反馈
+实例插入过程中存在一个实例插入到两个节点的情况，目测是getSStorageNode实现存在问题，已反馈
 2. organization unifying新的设计策略实现  完成度30%
 3. 测试与文档  完成度0%
 
