@@ -41,6 +41,11 @@
 2.2 object_division （true or false）是否拆分大对象<br />
 2.3 organization_unification_method （1 or 2）指明采用的organization detection的方法<br />
 
+### ----------------------------------New ----------------------------------------
+1. *数据load的速度 extremely slow！（选择2PC mode是否开启，对照组对比效果）
+2. 数据load之后，再次正常打开数据库失败，读不出数据。
+3. 在一致性hash的partition模式下，当数据reshard之后，对象的所属节点查找失效。
+
 ## 马杨
 ### 需要完成的功能
 1. organization detecting新的设计策略实现  完成度100%
