@@ -11,6 +11,10 @@
 1. runnable DPINM system：insert与query语句，数据划分与事务
 2. 项目文档：类图（以及说明类的基本用途），各模块处理流程，重要函数方法的注释
 
+### 测试：
+1. 吞吐量测试，分为4种数据access特点进行测试：Read-only（纯数据查询）， read-intense（以读任务为主70%，少量写30%），write-only（纯数据插入），write-intense。
+2. 测试随着数据量增加，吞吐量的变化。
+
 ## 张剑
 
 ### 需要完成的功能
