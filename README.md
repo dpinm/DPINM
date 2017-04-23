@@ -61,7 +61,8 @@
 ## 马杨
 ### 需要完成的功能
 1. organization detecting新的设计策略实现  完成度100%
-2. organization unifying新的设计策略实现  完成度30%
+2. organization unifying新的设计策略实现  完成度90%
+   后续工作主要是进行代码整理以及针对目前数据划分策略的有效性进行测试，查找存在的功能性问题。
 3. 测试与文档  完成度0%
 
 ## 徐晶
