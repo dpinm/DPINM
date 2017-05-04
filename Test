@@ -25,3 +25,6 @@ Re-sharding
     2.1 node capacity初始化，应减去 未判断organization 的objects的load。
     2.2 organization——part的load目前只考虑了个数。
     2.3 考虑MRV object以及partly move的情况。
+
+Query Processing
+1. 分发语句的mode。
