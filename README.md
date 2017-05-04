@@ -56,6 +56,7 @@
 3. orgnization detect 在遍历子节点的时候卡住 100%<br />
 3/17 原因是detect走的是command命令流程，没有初始化全局事务ID和TXN的缓冲池，导致master上一个事务未释放的情况下，另一个事务又去请求，导致死锁。<br />
 4. 一致性哈希作为partition策略时，reshard会导致数据找不到的问题，待修改！
+5. 增加一个secondary index, key oid- value object size.
 
 ### 接口
 1. inm.cfg文件中，静态参数与动态参数区分开<br />
