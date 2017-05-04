@@ -19,12 +19,27 @@ logs
 2. Query log or object log (most recently visited objects, 结合query_cache_size)
 3. Relationship cache( 结合relation_cache_size， store the weights of most recently traversed relationships )
 
+Indexes
+Global indexes:
+    1. object - storage node
+    ...
+    
+Loclal indexes:
+    1. command log
+    2. query log
+    3. relationship weight log
+    4. attr value  - object index
+    ...
+
+################### 存在的问题 ##################################
+
 Re-sharding
 1. organization detection ACCELERATE 参数。
 2. organization unification算法中：
     2.1 node capacity初始化，应减去 未判断organization 的objects的load。
     2.2 organization——part的load目前只考虑了个数。
     2.3 考虑MRV object以及partly move的情况。
+3. 在organization unification，对object的存在节点进行移动后，相关的global and local index是否相应更新。
 
 Query Processing
 1. 分发语句的mode。
