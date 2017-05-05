@@ -31,7 +31,7 @@
 ### ----------------------------------测试过程中发现的问题（在此更新） -----------------------------
 1. *数据load的速度 extremely slow！（选择2PC mode是否开启，对照组对比效果）。
 2. 数据load之后，再次正常打开数据库失败，读不出数据。
-3. 在一致性hash的partition模式下，当数据reshard之后，对象的所属节点查找失效。
+3. find命令查找实例存在问题
 
 ## 张剑
 
@@ -55,8 +55,9 @@
 2. 底层添加获取organization个数的接口 100%<br />
 3. orgnization detect 在遍历子节点的时候卡住 100%<br />
 3/17 原因是detect走的是command命令流程，没有初始化全局事务ID和TXN的缓冲池，导致master上一个事务未释放的情况下，另一个事务又去请求，导致死锁。<br />
-4. 一致性哈希作为partition策略时，reshard会导致数据找不到的问题，待修改！
+4. 底层添加获取commandLog个数的接口
 5. 增加一个local secondary index, key oid- value object size.
+6. 实现获取实例对象大小的接口，主节点和处理节点都需要调用
 
 ### 接口
 1. inm.cfg文件中，静态参数与动态参数区分开<br />
