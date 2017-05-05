@@ -43,3 +43,4 @@ Re-sharding
 
 Query Processing
 1. 分发语句的mode。
+2. sub query在master节点合并时，错误分支的剪枝问题。 
