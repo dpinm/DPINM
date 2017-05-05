@@ -19,7 +19,7 @@ logs
 2. Query log or object log (most recently visited objects, 结合query_cache_size)
 3. Relationship cache( 结合relation_cache_size， store the weights of most recently traversed relationships )
 
-Indexes
+Indexes （names of BDB db files？）
 Global indexes:
     1. object id; object name - object id (id allocation)
     2. object - storage node
@@ -32,10 +32,11 @@ Loclal indexes and files:
     1. command log 
     2. query log (cache_size)
     3. relationship weight log (cache_size)
-    4. local object file 
-    5. attr value  - object id index
-    6. attr/rel name - object id index
-
+    4. schema file 
+    5. local object file 
+    6. attr value  - object id index
+    7. attr/rel name - object id index
+    ...
 
 ################### 存在的问题 ##################################
 
