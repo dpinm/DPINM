@@ -21,15 +21,21 @@ logs
 
 Indexes
 Global indexes:
-    1. object - storage node
+    1. object id; object name - object id (id allocation)
+    2. object - storage node
+    3. schema-object 
+    4. object division
+    5. organization_part table
     ...
     
-Loclal indexes:
-    1. command log
-    2. query log
-    3. relationship weight log
-    4. attr value  - object index
-    ...
+Loclal indexes and files:
+    1. command log 
+    2. query log (cache_size)
+    3. relationship weight log (cache_size)
+    4. local object file 
+    5. attr value  - object id index
+    6. attr/rel name - object id index
+
 
 ################### 存在的问题 ##################################
 
@@ -40,6 +46,7 @@ Re-sharding
     2.2 organization——part的load目前只考虑了个数。
     2.3 考虑MRV object以及partly move的情况。
 3. 在organization unification，对object的存在节点进行移动后，相关的global and local index是否相应更新。
+4. print organization detection以及organization unification的相关log：object与organization的rel weight总和， object移动情况。
 
 Query Processing
 1. 分发语句的mode。
