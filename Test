@@ -52,3 +52,13 @@ Re-sharding
 Query Processing
 1. 分发语句的mode。
 2. sub query在master节点合并时，错误分支的剪枝问题。 
+organ.db: organization底层存储表
+sRel.db:
+sRel_name.db: 查询基于rel的统计表，优化时才用
+sInst.db:
+sInst_name.db:查询基于inst的统计表，优化时才用
+sSchema.db:
+sSchema_name.db:查询基于schema的统计表，优化时才用
+queryHot.db: 每个对象被查的次数统计
+shuffleLog.db :查询记录起始对象 目标对象以及访问次数的表
+shuffleSid.db :上面对应的索引表
