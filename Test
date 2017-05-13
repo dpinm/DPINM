@@ -62,3 +62,6 @@ sSchema_name.db:查询基于schema的统计表，优化时才用
 queryHot.db: 每个对象被查的次数统计
 shuffleLog.db :查询记录起始对象 目标对象以及访问次数的表
 shuffleSid.db :上面对应的索引表
+
+################### bugs ##################################
+1. find -i "A B"时有误
