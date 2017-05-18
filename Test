@@ -1,18 +1,18 @@
 参数配置测试
-1. Query_cache_size, also called object_cache_size 保留的最近访问的object的个数，与query log结合使用
-2. Relationship_weight_cache, 只保存最近访问的多少个关系的weight
-3. ACCELERATE (true:consider only the most recently accessed objects, or false:consider all objects )
-4. Load_factor
-5. gap
-6. Reshard_frequency
-7. Alpha, beta
-8. Replica_set_size
-9. Partition_mode (consistent hashing or organization_based)
-10. organization_detection_method (if organization_based, choose 1 of 2 detection method)
-11. Querying_processing_method (2 candidate query processing)
-12. Object division (choose whether divide a big object)
-13. Object_size 
-14. Transaction_size (for batch commands, treat how many commands as a transaction)
+1.？ Query_cache_size, also called object_cache_size 保留的最近访问的object的个数，与query log结合使用
+2. Relationship_weight_cache, 只保存最近访问的多少个关系的weight  --------------------  (√)
+3. ACCELERATE (true:consider only the most recently accessed objects, or false:consider all objects ) ------  (√)
+4. Load_factor ----------------- （load_size）
+5. gap 
+6. Reshard_frequency  ------------  (√， 但是后台还没有连上)
+7. Alpha, beta （√）
+8. ？ Replica_set_size
+9. Partition_mode (consistent hashing or organization_based) ----- (√)
+10. ？ organization_detection_method (if organization_based, choose 1 of 2 detection method)
+11. ？ Querying_processing_method (2 candidate query processing)
+12. ？ Object division (choose whether divide a big object)
+13. Object_size -----------------  (√)
+14. Transaction_size (for batch commands, treat how many commands as a transaction)  ----- （file -n）
 
 logs
 1. Command log (object ids, categories (contain/role, contain/role-inverse,… ))
@@ -66,10 +66,11 @@ shuffleSid.db :上面对应的索引表
 ################### bugs ##################################
 1. find -i "A B"时有误 （已修改）
 2. timeout不同步造成的消息 错误
-
+3. 当数据有一定规模时， reshard出错。
 
 ###########################################################
 打印系统信息
 1. master上object-storage 表，与 storage node具体保存的oids
 2. organization table表。
+ 
 
