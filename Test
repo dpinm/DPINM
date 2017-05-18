@@ -64,4 +64,12 @@ shuffleLog.db :查询记录起始对象 目标对象以及访问次数的表
 shuffleSid.db :上面对应的索引表
 
 ################### bugs ##################################
-1. find -i "A B"时有误
+1. find -i "A B"时有误 （已修改）
+2. timeout不同步造成的消息 错误
+
+
+###########################################################
+打印系统信息
+1. master上object-storage 表，与 storage node具体保存的oids
+2. organization table表。
+
